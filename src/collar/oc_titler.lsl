@@ -2,6 +2,7 @@
 // Copyright (c) 2008 - 2017 Nandana Singh, Garvin Twine, Cleo Collins,  
 // Satomi Ahn, Kisamin, Joy Stipe, Wendy Starfall, littlemousy,      
 // Romka Swallowtail, Mano Nevadan, and other contributors.  
+// RS: lines 98-100 stops script from continuously recentering on root prim (often at front of the collar)(
 // Licensed under the GPLv2.  See LICENSE for full details. 
 
 
@@ -93,10 +94,10 @@ ShowHideTitle() {
     if (g_iPartPrim > 0) {
         if (g_sParticle == "") {
           llLinkParticleSystem(g_iPartPrim,[]);
-          if (g_iPartPrim == g_iTextPrim) {
-            llSetLinkPrimitiveParamsFast(g_iTextPrim,
-                                         [PRIM_POS_LOCAL, <0,0,0>]);
-          }
+          //if (g_iPartPrim == g_iTextPrim) {
+          //  llSetLinkPrimitiveParamsFast(g_iTextPrim, [PRIM_POS_LOCAL, <0,0,0>]);
+          //  *IF* developer feels need to keep moving this prim, then CENTER in COLLAR, not centered on ROOT PRIM
+          //}
         }
         else {
             rotation start = ZERO_ROTATION;
